@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+<body>
+    <div class="jumbotron text-center">
+        <h1>The best students</h1>
+        <p>Wroclaw University of Sience and Technology 2017</p>
+    </div>
+    <div class="container">
+        <h2>List of students</h2>
+        <ul class="list-group">
+            <li class="list-group-item">{{name}}</li>
+            <li class="list-group-item">{{name2}}</li>
+            <li class="list-group-item">{{n}}</li>
+        </ul>
+        <div class="form-group">
+            <label for="usr">Add new student: </label>
+            <input type="text" class="form-control" id="usr" [(ngModel)]="n">
+            <h3>You entered: {{n}}</h3>
+        </div>
+    </div>
+    <footer class="footer text-center" style="margin-top:20px">
+        <div class="container">
+            <p class="text-muted">Copyright © inż. Beata Kalis</p>
+        </div>
+    </footer>
+</body>
