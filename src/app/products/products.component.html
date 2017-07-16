@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="form-group">
+    <label for="nInp">Product name:</label>
+    <input type="text" class="form-control" id="nInp" [(ngModel)]="name">
+    <label for="dInp" style="margin-top:10px">Product description:</label>
+    <input type="text" class="form-control" style="margin-bottom:20px" id="dInp" [(ngModel)]="desc">
+    <button type="button" class="btn btn-primary" (click)="add()">Add</button>
+  </div>
+
+  <h2>Products table</h2>
+  <div *ngIf="products && products.length > 0">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; let i = index" [attr.data-index]="i">
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+           <td><a class="btn btn-sm btn-danger" role="button" (click)="remove(i)">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
